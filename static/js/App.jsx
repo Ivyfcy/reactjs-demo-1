@@ -1,15 +1,16 @@
 import React from 'react';
 import Head from './Head';
+import styles from '../css/App.css';
 
 export default class App extends React.Component {
 
-    render () {
+    render() {
         return (
             <div>
-                <Head />
+                <Head/>
                 <form>
-                    <input />
-                    <button>OK</button>
+                    <input/>
+                    <button className={styles['text']}>OK</button>
                 </form>
             </div>
         );
