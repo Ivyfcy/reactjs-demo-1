@@ -1,0 +1,20 @@
+input {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+}
+
+.loginBody {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 383px;
+}
+
+.loginRoad {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    top: 383px;
+    height: 35px;
+}
