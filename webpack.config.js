@@ -1,6 +1,7 @@
 const webpack = require('webpack');
+const path = require('path');
 const config = {
-    entry:  __dirname + '/static/js/index.jsx',
+    entry: __dirname + '/static/js/index.jsx',
     output: {
         path: __dirname + '/static/dist',
         filename: 'bundle.js',
@@ -9,15 +10,18 @@ const config = {
         extensions: ['.js', '.jsx', '.css']
     },
     module: {
-        loaders:[
+        loaders: [
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
-                loader: 'babel-loader'
+                loaders: ['babel-loader']
             },
             {
                 test: /\.css$/,
-                loader: 'style-loader!css-loader'
+                exclude: [
+                    path.resolve(__dirname, 'node_modules'),
+                ],
+                loaders: ['style-loader', 'css-loader?modules&localIdentName=[name]__[local]___[hash:base64:5]']
             }
         ]
     }
